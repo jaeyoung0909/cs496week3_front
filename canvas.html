@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Painter</title>
+  <style type = "text/css">
+    canvas{bodrder:10px solid black;}
+    .a{
+      border: 1px solid blue;
+    }
+    .b{
+      background-color : blue;
+      }
+  </style>
+</head>
+<body>
+  <div class="a">
+    <canvas id="canvas" width="800" height="800"></canvas>
+  </div>
+
+  <div class="b">
+    <button id = "request" type="button"  name="button">Request</button>
+  </div>
+  <script type="text/javascript">
+    document.getElementById("request").onclick = function() {myFunction()};
+
+    function myFunction(){
+      var canvas = document.createElement("canvas");
+      // alert("send success");
+      // var image = new image();
+      // image.src = canvas.toDataURL("image/png");
+      // $.ajax({
+      //   type: "POST",
+      //   contentType: "image/png",
+      //   url : "/save_image",
+      //   data: saveImg
+      // });
+      
+      alert('check');
+      // draw to canvas...
+      canvas.toBlob(function(blob) {
+        saveAs(blob, "pretty image.png");
+      });
+
+    }
+  </script>
+  <script src="canvas.js">
+  </script>
+</body>
+</html>
